@@ -1,0 +1,60 @@
+<archetype-descriptor
+        xsi:schemaLocation="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0 http://maven.apache.org/xsd/archetype-descriptor-1.0.0.xsd
+        http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns="http://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        name="maven-archetype">
+
+    <requiredProperties>
+        <requiredProperty key="oidc_auth_server_url">
+            <defaultValue>https://sso.e-g.gs/auth/realms/it_dev</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="oidc_client_id">
+            <defaultValue>it_dev_services</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="s3">
+            <defaultValue>false</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="db_kind">
+            <defaultValue>postgresql</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="datasource_username">
+            <defaultValue>db_user</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="datasource_password">
+            <defaultValue>db_password</defaultValue>
+        </requiredProperty>
+        <requiredProperty key="datasource_jdbc_url">
+            <defaultValue>jdbc:postgresql://localhost:5432/xxxx</defaultValue>
+        </requiredProperty>
+    </requiredProperties>
+
+    <fileSets>
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.java</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.*</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>scripts</directory>
+            <includes>
+                <include>build.sh</include>
+            </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+            <directory>docker-compose</directory>
+            <includes>
+                <include>docker-compose.yml</include>
+                <include>docker-compose-local.yml</include>
+            </includes>
+        </fileSet>
+    </fileSets>
+
+</archetype-descriptor>
