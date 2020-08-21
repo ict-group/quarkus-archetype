@@ -3,6 +3,11 @@
 Maven Archetype Plugin to create a Quarkus project with postgresql + minio + some abstract classes.
 
 ### How to: 
+
+git clone git@github.com:ict-group/quarkus-archetype.git
+cd quarkus-archetype
+mvn install
+cd ..
 mvn archetype:generate \
                        -DarchetypeGroupId=it.ictgroup \
                        -DarchetypeArtifactId=quarkus-archetype
